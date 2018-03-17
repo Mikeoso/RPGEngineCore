@@ -1,0 +1,24 @@
+Player:
+  Template:
+    base-health: 20.0
+    base-healthRegen: 2.0
+    base-damage: 5.0
+    base-armor: 3.0
+    base-crit: 2.0
+    base-dodge: 2.0
+Item:
+  Attributes:
+    Health:
+      keyword: health
+    Damage:
+      keyword: damage
+    Health-Regen:
+      keyword: regen
+    Dodge:
+      keyword: dodge
+    Critical:
+      keyword: crit-chance
+    Armor:
+      keyword: armor
+    Exp:
+      keyword: exp

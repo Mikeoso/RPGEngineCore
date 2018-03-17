@@ -1,0 +1,7 @@
+main: rpg.engine.RPGEngine
+name: RPGEngine
+version: 0.9
+author: Mike0so
+commands:
+  rpg:
+    description: Shows all important information for the Plugin.
