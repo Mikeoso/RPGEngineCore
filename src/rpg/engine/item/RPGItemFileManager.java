@@ -45,14 +45,12 @@ public class RPGItemFileManager {
 	 * Loads all Itemfiles as ItemStack into the memory
 	 */
 	public void loadExistingFiles() {
+		customFiles.clear();
 		for (File file : itemsFolder.listFiles()) {
 			if (file.isFile()) {
 				try {
 					YamlConfiguration itemFileConfig = YamlConfiguration.loadConfiguration(file);
 					ItemStack loadedItem = itemFileConfig.getItemStack("Item");
-					if (customFiles.containsKey(file.getName())) {
-						customFiles.remove(file.getName());
-					}
 					customFiles.put(file.getName(), loadedItem);
 				} catch (Exception e) {
 					RPGEngine.getInstance().getLogger().warning("Error while loading Item in File: " + file.getName());
@@ -60,6 +58,28 @@ public class RPGItemFileManager {
 				}
 			}
 		}
+	}
+	
+	public void renameFile(String oldName, String newName) {
+		if (oldName == null) {
+			RPGEngine.getInstance().getLogger().warning("Error while renaming file");
+			return;
+		}
+		
+		File oldItem = new File(itemsFolder + "\\" + oldName + ".yml");
+		
+		if ((!oldItem.exists())) {
+			return;
+		}
+		if (newName == null) {
+			return;
+		}
+		
+		File newFile = new File(itemsFolder + "\\" + newName + ".yml");
+		ItemStack stack = null;
+		
+		oldItem.renameTo(newFile);
+		loadExistingFiles();
 	}
 	
 	public HashMap<String, ItemStack> getDb() {
@@ -71,15 +91,16 @@ public class RPGItemFileManager {
 	 * @return The loaded Item
 	 */
 	public ItemStack loadItemByName(String itemname) {
-		File loadItemFile = new File(itemsFolder + "\\" + itemname + ".yml");
-		
+		if (customFiles.containsKey(itemname)) {
+			return customFiles.get(itemname);
+		}
+		File loadItemFile = new File(itemsFolder + "\\" + itemname + ".yml");		
 		if (!loadItemFile.exists()) {
 			return null;
 		}
 		
 		YamlConfiguration itemFileConfig = YamlConfiguration.loadConfiguration(loadItemFile);
 		ItemStack stack = itemFileConfig.getItemStack("Item");
-		
 		return stack;
 	}
 	

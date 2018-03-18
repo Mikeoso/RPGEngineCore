@@ -14,7 +14,7 @@ public class ItemDuplicateCommand extends BasicCommand {
 		super("ItemDuplicateCommand");
 		setDescription("Duplicates the item your holding in your hand");
 		setUsage("/rpg item duplicate <amount>");
-		setArgumentRange(0, 0);
+		setArgumentRange(0, 1);
 		setIdentifiers("rpg item duplicate");
 		setPermission("rpg.item.duplicate");
 	}
@@ -31,7 +31,7 @@ public class ItemDuplicateCommand extends BasicCommand {
 		ItemStack duplicated = player.getPlayer().getInventory().getItemInMainHand().clone();
 		int amount = 0;
 		
-		if (realArgs[0] != null) {
+		if (realArgs.length > 0) {
 			try {
 				amount = Integer.valueOf(realArgs[0]);
 			} catch (NumberFormatException e) {

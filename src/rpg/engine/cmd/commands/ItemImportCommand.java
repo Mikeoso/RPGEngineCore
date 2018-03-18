@@ -25,6 +25,7 @@ public class ItemImportCommand extends BasicCommand {
 		
 		
 		RPGItemFileManager manager = new RPGItemFileManager();
+		manager.loadExistingFiles();
 		ItemStack stack = manager.loadItemByName(realArgs[0]);
 		
 		if (stack == null) {

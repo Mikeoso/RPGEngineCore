@@ -8,6 +8,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import rpg.engine.RPGEngine;
 import rpg.engine.cmd.BasicCommand;
+import rpg.engine.item.RPGItemFileManager;
 import rpg.engine.player.RPGPlayer;
 
 public class ItemRenameCommand extends BasicCommand{
@@ -31,12 +32,16 @@ public class ItemRenameCommand extends BasicCommand{
 			return false;
 		}
 		
-		ItemStack itemInHand = player.getPlayer().getInventory().getItemInMainHand();
+		ItemStack itemInHand = player.getPlayer().getInventory().getItemInMainHand().clone();
 		ItemMeta itemMeta = itemInHand.getItemMeta();
 		
 		String oldName = itemMeta.getDisplayName();
+
+		RPGItemFileManager manager = new RPGItemFileManager();
 		itemMeta.setDisplayName(realArgs[0].replaceAll("&", "§"));
+		itemInHand.setItemMeta(itemMeta);
 		player.getPlayer().getInventory().setItemInMainHand(itemInHand);
+		manager.renameFile(oldName, realArgs[0]);
 		player.getPlayer().sendMessage("§cSuccessfuly changed displayname from: §e" + oldName + "§c to: §e" + realArgs[0]);
 		return true;
 	}
