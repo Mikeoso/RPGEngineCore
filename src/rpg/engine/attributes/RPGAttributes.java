@@ -7,5 +7,7 @@ public enum RPGAttributes {
 	Dodge,
 	Crit_Chance,
 	Health_Regen,
-	EXP
+	EXP,
+	Attack_Speed,
+	Movement_Speed
 }

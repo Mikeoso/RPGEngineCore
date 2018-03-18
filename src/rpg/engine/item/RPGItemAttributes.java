@@ -74,4 +74,12 @@ public class RPGItemAttributes {
 	public double getItemExpIncrease() {
 		return reader.getBonusByAttribute(player, ItemReaderAttribute.NORMAL, RPGAttributes.EXP, true);
 	}
+	
+	public double getItemAttackSpeed() {
+		return reader.getBonusByAttribute(player, ItemReaderAttribute.NORMAL, RPGAttributes.Attack_Speed, true);
+	}
+	
+	public double getItemMovementSpeed() {
+		return reader.getBonusByAttribute(player, ItemReaderAttribute.NORMAL, RPGAttributes.Movement_Speed, true);
+	}
 }

@@ -13,6 +13,8 @@ public class ConfigEntries {
 	public static String PLAYER_TEMPLATE_BASE_CRIT = "Player.Template.base-crit";
 	public static String PLAYER_TEMPLATE_BASE_DODGE = "Player.Template.base-dodge";
 	public static String PLAYER_TEMPLATE_BASE_CRIT_DMG_MULTI = "Player.Template.base-crit-damage.multiplier";
+	public static String PLAYER_TEMPLATE_BASE_ATTACK_SPEED = "Player.Template.base-attack-speed";
+	public static String PLAYER_TEMPLATE_BASE_MOVEMENT_SPEED = "Player.Template.base-movement-speed";
 	
 	public static String ITEM_ATTR_HEALTH_KEYWORD = "Item.Attributes.Health.keyword";
 	public static String ITEM_ATTR_DAMAGE_KEYWORD = "Item.Attributes.Damage.keyword";
@@ -21,4 +23,6 @@ public class ConfigEntries {
 	public static String ITEM_ATTR_CRITICAL_KEYWORD = "Item.Attributes.Critical.keyword";
 	public static String ITEM_ATTR_ARMOR_KEYWORD = "Item.Attributes.Armor.keyword";
 	public static String ITEM_ATTR_EXP_KEYWORD = "Item.Attributes.Exp.keyword";
+	public static String ITEM_ATTR_ATTACKSPEED_KEYWORD = "Item.Attributes.Attack-Speed.keyword";
+	public static String ITEM_ATTR_MOVEMENT_SPEED = "Player.Template.base-movement-speed";
 }

@@ -23,9 +23,12 @@ public class RPGPlayer {
 	private double baseDodgeChance;
 	private double baseCritChance;
 	private double baseCritMultiplier;
+	private double baseAttackSpeed;
+	private double baseMovementSpeed;
 	
 	private RPGItemAttributes attributes;
 	private Random chanceGenerator;
+
 	
 	public RPGPlayer(Player player) {
 		this.player = player;
@@ -37,6 +40,8 @@ public class RPGPlayer {
 		this.baseDodgeChance = RPGEngine.getInstance().getConfig().getDouble(ConfigEntries.PLAYER_TEMPLATE_BASE_DODGE);
 		this.baseCritChance = RPGEngine.getInstance().getConfig().getDouble(ConfigEntries.PLAYER_TEMPLATE_BASE_CRIT);
 		this.baseCritMultiplier = RPGEngine.getInstance().getConfig().getDouble(ConfigEntries.PLAYER_TEMPLATE_BASE_CRIT_DMG_MULTI);
+		this.baseAttackSpeed = RPGEngine.getInstance().getConfig().getDouble(ConfigEntries.PLAYER_TEMPLATE_BASE_ATTACK_SPEED);
+		this.baseMovementSpeed = RPGEngine.getInstance().getConfig().getDouble(ConfigEntries.PLAYER_TEMPLATE_BASE_MOVEMENT_SPEED);
 		
 		this.attributes = new RPGItemAttributes(this);
 		this.chanceGenerator = new Random();
@@ -94,7 +99,13 @@ public class RPGPlayer {
 		return getBaseDamage() + attributes.getItemDamage();
 	}
 	
+	public double getBasicAttackSpeed() {
+		return this.baseAttackSpeed;
+	}
 	
+	public double getBaseMovementSpeed() {
+		return this.baseMovementSpeed;
+	}
 	/**
 	 * @return the multiplier to calc critical damage
 	 */

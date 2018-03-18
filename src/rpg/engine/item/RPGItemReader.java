@@ -84,6 +84,10 @@ public class RPGItemReader {
 		case EXP:
 			patternSb.append(engine.getConfig().getString(ConfigEntries.ITEM_ATTR_EXP_KEYWORD));
 			break;
+		case Attack_Speed:
+			patternSb.append(engine.getConfig().getString(ConfigEntries.ITEM_ATTR_ATTACKSPEED_KEYWORD));			
+		case Movement_Speed:
+			patternSb.append(engine.getConfig().getString(ConfigEntries.ITEM_ATTR_MOVEMENT_SPEED));
 		}
 		
 		patternSb.append(")");

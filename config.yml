@@ -6,7 +6,9 @@ Player:
     base-armor: 3.0
     base-crit: 2.0
     base-dodge: 2.0
+    base-attack-speed: 1.0
     base-crit-damage.multiplier: 1.5
+    base-movement-speed: 2.0
 Item:
   Attributes:
     Health:
@@ -23,3 +25,7 @@ Item:
       keyword: armor
     Exp:
       keyword: exp
+    Attack-Speed:
+      keyword: attack-speed
+    Movement-Speed:
+      keyword: movement-speed

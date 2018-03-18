@@ -12,6 +12,6 @@ public class PlayerLevelChanceListener implements Listener {
 	@EventHandler
 	public void onLevelChange(PlayerLevelChangeEvent e) {
 		RPGPlayer player = new RPGPlayer(e.getPlayer());
-		RPGEngine.getInstance().getItemManager().updateMaxHealth(player);
+		RPGEngine.getInstance().getItemManager().updateStats(player);
 	}
 }

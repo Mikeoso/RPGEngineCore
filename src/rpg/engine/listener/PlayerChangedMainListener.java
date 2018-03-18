@@ -17,9 +17,9 @@ public class PlayerChangedMainListener implements Listener {
 			
 			@Override
 			public void run() {
-				RPGEngine.getInstance().getItemManager().updateMaxHealth(player);
+				RPGEngine.getInstance().getItemManager().updateStats(player);
 			}
 		}, 10L);
-	}
-
+		}
+	
 }
