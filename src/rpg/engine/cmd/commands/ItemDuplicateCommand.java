@@ -28,8 +28,17 @@ public class ItemDuplicateCommand extends BasicCommand {
 			player.getPlayer().sendMessage("§cYou need a item in your hand to duplicate it");
 			return false;
 		}
-		
 		ItemStack duplicated = player.getPlayer().getInventory().getItemInMainHand().clone();
+		int amount = 0;
+		
+		if (realArgs[0] != null) {
+			try {
+				amount = Integer.valueOf(realArgs[0]);
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			}
+			duplicated.setAmount(amount);
+		}
 		player.getPlayer().getInventory().addItem(duplicated);
 		player.getPlayer().sendMessage("§cSuccessfuly duplicated item:§e !" + duplicated.getType());
 		return true;

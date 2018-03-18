@@ -15,7 +15,7 @@ public class ItemRenameCommand extends BasicCommand{
 	public ItemRenameCommand(RPGEngine engine) {
 		super("ItemRenameCommand");
 		setDescription("Adds/Changes the name of the item your holding in your hand.");
-		setUsage("/rpg item rename");
+		setUsage("/rpg item rename <newName>");
 		setArgumentRange(1, 1);
 		setIdentifiers("rpg item rename");
 		setPermission("rpg.item.rename");
