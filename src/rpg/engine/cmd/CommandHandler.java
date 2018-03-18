@@ -11,6 +11,11 @@ import org.bukkit.entity.Player;
 
 import rpg.engine.RPGEngine;
 
+
+/**
+ * @author Daniel Dieckmann aka Mike0so
+ * This Class is used to read the command input by a player and find the right command module by identifier
+ */
 public class CommandHandler {
 
 	protected LinkedHashMap<String, Command> commands;

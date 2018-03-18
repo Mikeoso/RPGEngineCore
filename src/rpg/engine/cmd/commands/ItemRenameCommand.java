@@ -34,9 +34,10 @@ public class ItemRenameCommand extends BasicCommand{
 		ItemStack itemInHand = player.getPlayer().getInventory().getItemInMainHand();
 		ItemMeta itemMeta = itemInHand.getItemMeta();
 		
+		String oldName = itemMeta.getDisplayName();
 		itemMeta.setDisplayName(realArgs[0].replaceAll("&", "§"));
 		player.getPlayer().getInventory().setItemInMainHand(itemInHand);
-		player.getPlayer().sendMessage("§fSuccessfuly changed lore!");
+		player.getPlayer().sendMessage("§cSuccessfuly changed displayname from: §e" + oldName + "§c to: §e" + realArgs[0]);
 		return true;
 	}
 }

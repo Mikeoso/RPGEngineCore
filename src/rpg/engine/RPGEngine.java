@@ -58,20 +58,34 @@ public class RPGEngine extends JavaPlugin {
 		
 	}
 	
+	/**
+	 * @return The instance of this Plugin
+	 */
 	public static RPGEngine getInstance() {
 		return engine;
 	}
 	
+	/**
+	 * @param sender command executor
+	 * @param permission permission needed
+	 * @return true if the executor has the needed permission
+	 */
 	public static boolean hasPerm(CommandSender sender, String permission) {
 		return perms.has(sender, permission);
 	}
 	
+    /**
+     * @return registers Vault as Permission hook
+     */
     private boolean setupPermissions() {
         RegisteredServiceProvider<Permission> rsp = getServer().getServicesManager().getRegistration(Permission.class);
         perms = rsp.getProvider();
         return perms != null;
     }
     
+    /**
+     * Registers all Listeners needed by the plugin
+     */
     private void registerEvents() {
     	engine.getServer().getPluginManager().registerEvents(new InventoryCloseListener(), this);
     	engine.getServer().getPluginManager().registerEvents(new PlayerChangedMainListener(), this);

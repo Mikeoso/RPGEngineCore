@@ -11,10 +11,19 @@ import rpg.engine.player.RPGPlayer;
 import rpg.engine.RPGEngine;
 import rpg.engine.attributes.RPGAttributes;
 
+/**
+ * @author Daniel Dieckmann aka Mike0so
+ * This Class reads the lore of the wanted attribute of a player
+ */
 public class RPGItemReader {
 
 	private RPGEngine engine;
 	
+	/**
+	 * @author Daniel Dieckmann aka Mike0so
+	 * 
+	 * Used to determine the right Patternstring to match the lore
+	 */
 	public enum ItemReaderAttribute {
 		NORMAL,
 		ONLY_WORD,
@@ -25,6 +34,12 @@ public class RPGItemReader {
 		this.engine = engine;
 	}
 	
+	/**
+	 * @param attr Used to determine the patternstring
+	 * @param rpgAttributes The Attribute to look for
+	 * @param procent If the Attribute is calculated by procentage
+	 * @return
+	 */
 	public String buildPatternString(ItemReaderAttribute attr, RPGAttributes rpgAttributes, boolean procent) {
 		boolean isOnlyWord = false;
 		
@@ -79,6 +94,14 @@ public class RPGItemReader {
 		return patternSb.toString();
 	}
 	
+	
+	/**
+	 * @param player The Player to use the Items from
+	 * @param attr The ItemAttribute for the right pattern string
+	 * @param rpgAttributes The Attribute to look for
+	 * @param procent If the attribute is used als procentage
+	 * @return
+	 */
 	public double getBonusByAttribute (RPGPlayer player, ItemReaderAttribute attr, RPGAttributes rpgAttributes, boolean procent) {
 		
 		double bonusAmount = 0;

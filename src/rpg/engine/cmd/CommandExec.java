@@ -13,6 +13,12 @@ import rpg.engine.cmd.commands.ItemListCommand;
 import rpg.engine.cmd.commands.ItemLoreAddCommand;
 import rpg.engine.cmd.commands.ItemRenameCommand;
 
+/**
+ * @author Daniel Dieckmann aka Mike0so
+ * 
+ * This Class is used to execute the custom command handler and register the command modules
+ *
+ */
 public class CommandExec implements CommandExecutor {
 
 	private CommandHandler hander;

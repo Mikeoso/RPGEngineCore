@@ -1,5 +1,9 @@
 package rpg.engine.config;
 
+/**
+ * @author Daniel Dieckmann aka Mike0so
+ * This Class is used to determine the right config path
+ */
 public class ConfigEntries {
 
 	public static String PLAYER_TEMPLATE_BASE_HEALTH = "Player.Template.base-health";

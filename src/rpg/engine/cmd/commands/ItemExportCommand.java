@@ -36,6 +36,7 @@ public class ItemExportCommand extends BasicCommand {
 		
 		RPGItemFileManager manager = new RPGItemFileManager();
 		manager.saveItemToFile(player.getPlayer().getInventory().getItemInMainHand());
+		player.getPlayer().sendMessage("§cSuccessfuly saved item:§e " + player.getPlayer().getInventory().getItemInMainHand().getItemMeta().getDisplayName());
 		return true;
 	}
 }

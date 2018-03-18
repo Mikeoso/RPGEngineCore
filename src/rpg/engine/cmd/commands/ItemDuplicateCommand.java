@@ -31,7 +31,7 @@ public class ItemDuplicateCommand extends BasicCommand {
 		
 		ItemStack duplicated = player.getPlayer().getInventory().getItemInMainHand().clone();
 		player.getPlayer().getInventory().addItem(duplicated);
-		player.getPlayer().sendMessage("$fSuccessfuly duplicated!");
+		player.getPlayer().sendMessage("§cSuccessfuly duplicated item:§e !" + duplicated.getType());
 		return true;
 	}
 }

@@ -2,6 +2,11 @@ package rpg.engine.cmd;
 
 import org.bukkit.command.CommandSender;
 
+/**
+ * @author Daniel Dieckmann aka Mike0so
+ *
+ * Represents a abstract implementation of an Command, this is useful for the CommandHandler to determine the right Command while searching for the right Command
+ */
 public abstract class BasicCommand implements Command {
 
 	private String name;

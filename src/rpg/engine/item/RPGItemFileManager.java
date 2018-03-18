@@ -9,6 +9,10 @@ import org.bukkit.inventory.ItemStack;
 
 import rpg.engine.RPGEngine;
 
+/**
+ * @author Daniel Dieckmann aka Mike0so
+ * This class is used as Item Repository
+ */
 public class RPGItemFileManager {
 
 	private File itemsFolder;
@@ -22,6 +26,10 @@ public class RPGItemFileManager {
 		loadExistingFiles();
 	}
 	
+	
+	/**
+	 * Creates the Items folder withing the Plugin/Folder
+	 */
 	private void createFolderIfNotExists() {
 		if (!itemsFolder.exists()) {
 			try {
@@ -33,6 +41,9 @@ public class RPGItemFileManager {
 		}
 	}
 	
+	/**
+	 * Loads all Itemfiles as ItemStack into the memory
+	 */
 	public void loadExistingFiles() {
 		for (File file : itemsFolder.listFiles()) {
 			if (file.isFile()) {
@@ -55,6 +66,10 @@ public class RPGItemFileManager {
 		return customFiles;
 	}
 	
+	/**
+	 * @param Itemname filename of the item
+	 * @return The loaded Item
+	 */
 	public ItemStack loadItemByName(String itemname) {
 		File loadItemFile = new File(itemsFolder + "\\" + itemname + ".yml");
 		
@@ -67,6 +82,11 @@ public class RPGItemFileManager {
 		
 		return stack;
 	}
+	
+	
+	/**
+	 * @param stack The item to save as file
+	 */
 	public void saveItemToFile(ItemStack stack) {
 		File newItemFile = new File(itemsFolder + "\\" + stack.getItemMeta().getDisplayName() + ".yml");
 		

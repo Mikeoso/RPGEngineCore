@@ -53,7 +53,7 @@ public class ItemCreateCommand extends BasicCommand {
 		
 		if (realArgs.length <= 1) {
 			player.getInventory().addItem(stack);
-			sender.sendMessage("§cAdded new Item to your inventory of Type: $f" + stack.getType().toString());
+			sender.sendMessage("§cAdded new Item to your inventory of Type: §e" + stack.getType().toString());
 			return true;
 		}
 		
@@ -70,6 +70,7 @@ public class ItemCreateCommand extends BasicCommand {
 		}
 		stack.setItemMeta(stackMeta);
 		player.getInventory().addItem(stack);
+		sender.sendMessage("§cAdded new Item to your inventory of Type:§e " + stack.getType().toString());
 		return true;
 	}
 }

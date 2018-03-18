@@ -23,9 +23,11 @@ public class ItemListCommand extends BasicCommand {
 
 		//I know its ugly, but its 4 a.m
 		manager.loadExistingFiles();
-		sender.sendMessage("§c Found Items: ");
+		sender.sendMessage("§c Found Items: §e" + manager.getDb().values().size());
+		int counter = 0;
 		for(ItemStack stack : manager.getDb().values()) {
-			sender.sendMessage(stack.getItemMeta().getDisplayName());
+			counter++;
+			sender.sendMessage("§c" + counter + ".§e " + stack.getItemMeta().getDisplayName());
 		}
 		return true;
 	}

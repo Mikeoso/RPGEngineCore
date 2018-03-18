@@ -32,7 +32,7 @@ public class ItemImportCommand extends BasicCommand {
 			return false;
 		}
 		player.getPlayer().getInventory().addItem(stack);
-		player.getPlayer().sendMessage("§fSuccessfuly loaded item: " + realArgs[0]);
+		player.getPlayer().sendMessage("§cSuccessfuly loaded item:§e " + realArgs[0]);
 		return true;
 	}
 

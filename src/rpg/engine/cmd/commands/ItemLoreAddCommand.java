@@ -45,7 +45,7 @@ public class ItemLoreAddCommand extends BasicCommand {
 		itemMeta.setLore(lore);
 		itemInHand.setItemMeta(itemMeta);
 		player.getPlayer().getInventory().setItemInMainHand(itemInHand);
-		player.getPlayer().sendMessage("§fSuccessfuly changed lore!");
+		player.getPlayer().sendMessage("§cSuccessfuly changed §elore!");
 		return true;
 	}
 }
