@@ -13,7 +13,7 @@ public class ItemDuplicateCommand extends BasicCommand {
 	public ItemDuplicateCommand(RPGEngine engine) {
 		super("ItemDuplicateCommand");
 		setDescription("Duplicates the item your holding in your hand");
-		setUsage("/rpg item duplicate");
+		setUsage("/rpg item duplicate <amount>");
 		setArgumentRange(0, 0);
 		setIdentifiers("rpg item duplicate");
 		setPermission("rpg.item.duplicate");
