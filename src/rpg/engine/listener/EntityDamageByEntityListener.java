@@ -7,6 +7,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
+import rpg.engine.RPGEngine;
+import rpg.engine.config.ConfigEntries;
 import rpg.engine.player.RPGPlayer;
 
 public class EntityDamageByEntityListener implements Listener {
@@ -19,7 +21,7 @@ public class EntityDamageByEntityListener implements Listener {
 		//Damage calculation
 		double damageOfAttacker = 0;
 		double armorOfDefender = 0;
-		double critChanceMultiplier = 1.5;
+		double critChanceMultiplier = RPGEngine.getInstance().getConfig().getDouble(ConfigEntries.PLAYER_TEMPLATE_BASE_CRIT_DMG_MULTI);
 		
 		//Case Entity Attacks Player
 		if (e.getDamager() instanceof Player) {

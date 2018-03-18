@@ -22,6 +22,7 @@ public class RPGPlayer {
 	private double baseHealthRegen;
 	private double baseDodgeChance;
 	private double baseCritChance;
+	private double baseCritMultiplier;
 	
 	private RPGItemAttributes attributes;
 	private Random chanceGenerator;
@@ -35,6 +36,7 @@ public class RPGPlayer {
 		this.baseHealthRegen = RPGEngine.getInstance().getConfig().getDouble(ConfigEntries.PLAYER_TEMPLATE_BASE_HEALTHREGEN);
 		this.baseDodgeChance = RPGEngine.getInstance().getConfig().getDouble(ConfigEntries.PLAYER_TEMPLATE_BASE_DODGE);
 		this.baseCritChance = RPGEngine.getInstance().getConfig().getDouble(ConfigEntries.PLAYER_TEMPLATE_BASE_CRIT);
+		this.baseCritMultiplier = RPGEngine.getInstance().getConfig().getDouble(ConfigEntries.PLAYER_TEMPLATE_BASE_CRIT_DMG_MULTI);
 		
 		this.attributes = new RPGItemAttributes(this);
 		this.chanceGenerator = new Random();
@@ -92,6 +94,13 @@ public class RPGPlayer {
 		return getBaseDamage() + attributes.getItemDamage();
 	}
 	
+	
+	/**
+	 * @return the multiplier to calc critical damage
+	 */
+	public double getBaseCritMultiplier() {
+		return this.baseCritMultiplier;
+	}
 	/**
 	 * @return The baseHealth of the Player
 	 */

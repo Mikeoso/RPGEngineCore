@@ -12,6 +12,7 @@ public class ConfigEntries {
 	public static String PLAYER_TEMPLATE_BASE_ARMOR = "Player.Templase.base-armor";
 	public static String PLAYER_TEMPLATE_BASE_CRIT = "Player.Template.base-crit";
 	public static String PLAYER_TEMPLATE_BASE_DODGE = "Player.Template.base-dodge";
+	public static String PLAYER_TEMPLATE_BASE_CRIT_DMG_MULTI = "Player.Template.base-crit-damage.multiplier";
 	
 	public static String ITEM_ATTR_HEALTH_KEYWORD = "Item.Attributes.Health.keyword";
 	public static String ITEM_ATTR_DAMAGE_KEYWORD = "Item.Attributes.Damage.keyword";

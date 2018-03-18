@@ -6,6 +6,7 @@ Player:
     base-armor: 3.0
     base-crit: 2.0
     base-dodge: 2.0
+    base-crit-damage.multiplier: 1.5
 Item:
   Attributes:
     Health:
